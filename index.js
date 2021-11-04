@@ -29,6 +29,14 @@ readme
             message: "What is your project name?",
             name: "projectname",
         },
+        {
+            // == What language(s) is your project written in?
+
+            type: "checkbox",
+            message: "What language(s) is your project written in?",
+            choices: ["HTML", "CSS", "Javascript", "Python", "C#", "C+/++"],
+            name: "projectlanguages",
+        },
     ])
     .then((answers) => {})
     .catch((error) => {
