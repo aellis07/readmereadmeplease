@@ -22,6 +22,13 @@ readme
             message: "What is your user name?",
             name: "username",
         },
+        {
+            // == What is your project name?
+
+            type: "input",
+            message: "What is your project name?",
+            name: "projectname",
+        },
     ])
     .then((answers) => {})
     .catch((error) => {
