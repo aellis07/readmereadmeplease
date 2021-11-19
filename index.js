@@ -111,4 +111,9 @@ inquirer.prompt(promptobj).then((answers) => {
     // (4)
     const strngobj = JSON.stringify(answers);
     // (5)
+    fs.writeFile(readMe, readMeTemplate(JSON.parse(strngobj)), (err) => {
+        // readMeTemplate(JSON.parse(strngobj));
+        err ? console.error(err) : console.log("New ReadMe created!");
+    });
+    console.log(JSON.parse(strngobj));
 });
