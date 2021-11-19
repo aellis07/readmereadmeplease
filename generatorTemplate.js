@@ -1,6 +1,7 @@
 // Readme Template =====================
 
 function generatorTemplate({
+    // User input
     title,
     description,
     username,
@@ -11,6 +12,7 @@ function generatorTemplate({
     test,
     license,
 }) {
+    // Template of ReadMe
     return `# **${title}**
     
 ## Description
