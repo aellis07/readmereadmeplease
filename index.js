@@ -11,7 +11,7 @@
 
 const inquirer = require("inquirer");
 const fs = require("fs");
-const readMeTemplate = require("./readMeTemplate");
+const generatorTemplate = require("./generatorTemplate.js");
 const readMe = "newReadMe.md";
 
 // == PROMPTS (2)
@@ -22,14 +22,14 @@ const promptobj = [
 
         type: "input",
         message: "What is your project name?",
-        name: "projectTitle",
+        name: "title",
     },
     {
         // == What is your project name?
 
         type: "input",
         message: "What is your project purpose?",
-        name: "projectDesc",
+        name: "description",
     },
 
     {
@@ -37,14 +37,14 @@ const promptobj = [
 
         type: "input",
         message: "Installation instructions",
-        name: "projectInstall",
+        name: "installation",
     },
     {
         // == How do you use the application
 
         type: "input",
         message: "How do you use the application associated with your project?",
-        name: "projectUsage",
+        name: "usage",
     },
     {
         // == Project license
@@ -59,7 +59,7 @@ const promptobj = [
             "Apache License 2.0",
             "Boost Software License 1.0",
         ],
-        name: "projectLicense",
+        name: "license",
     },
     {
         // == Contribution guidlines
@@ -67,51 +67,38 @@ const promptobj = [
         type: "input",
         message:
             "What are the guidelines for other developers to contribute to your project?",
-        name: "projectContribute",
+        name: "contribution",
     },
     {
         // == How to run test associated with the project?
 
         type: "input",
         message: "How do you run any tests associated with your project?",
-        name: "projectTest",
+        name: "test",
     },
     {
         // == What is your github username?
 
         type: "input",
         message: "What is your github username?",
-        name: "projectUserName",
+        name: "username",
     },
     {
         // == What is your email?
 
         type: "input",
         message: "What is your email?",
-        name: "projectEmail",
+        name: "email",
     },
 ];
 
 // FUNCTIONS
 // ================================
-// console.log(promptobj);
-// console.log(JSON.stringify(promptobj));
-// (3)
-// inquirer.prompt(promptobj).then((answers) => {
-//     // (4)
-//     const strngobj = JSON.stringify(answers);
-//     // (5)
-//     fs.writeFile(readMe, readMeTemplate(strngobj), (err) => {
-//         err ? console.error(err) : console.log("New ReadMe created!");
-//     });
-//     // console.log(strngobj[2]);
-// });
-
 inquirer.prompt(promptobj).then((answers) => {
     // (4)
     const strngobj = JSON.stringify(answers);
     // (5)
-    fs.writeFile(readMe, readMeTemplate(JSON.parse(strngobj)), (err) => {
+    fs.writeFile(readMe, generatorTemplate(JSON.parse(strngobj)), (err) => {
         // readMeTemplate(JSON.parse(strngobj));
         err ? console.error(err) : console.log("New ReadMe created!");
     });
