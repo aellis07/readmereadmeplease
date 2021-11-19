@@ -22,3 +22,5 @@ ${description}
   
 This project is licensed by: ${license}.`;
 }
+
+module.exports = generatorTemplate;
