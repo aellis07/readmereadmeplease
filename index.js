@@ -109,4 +109,6 @@ const promptobj = [
 
 inquirer.prompt(promptobj).then((answers) => {
     // (4)
+    const strngobj = JSON.stringify(answers);
+    // (5)
 });
