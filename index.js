@@ -91,3 +91,22 @@ const promptobj = [
         name: "projectEmail",
     },
 ];
+
+// FUNCTIONS
+// ================================
+// console.log(promptobj);
+// console.log(JSON.stringify(promptobj));
+// (3)
+// inquirer.prompt(promptobj).then((answers) => {
+//     // (4)
+//     const strngobj = JSON.stringify(answers);
+//     // (5)
+//     fs.writeFile(readMe, readMeTemplate(strngobj), (err) => {
+//         err ? console.error(err) : console.log("New ReadMe created!");
+//     });
+//     // console.log(strngobj[2]);
+// });
+
+inquirer.prompt(promptobj).then((answers) => {
+    // (4)
+});
