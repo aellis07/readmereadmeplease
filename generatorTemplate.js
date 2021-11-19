@@ -53,4 +53,5 @@ For questions or any other inqurires please contact me at ${email}
 or on [Github](https://www.github.com/${username}).`;
 }
 
+// Export generator template - call generatorTemplate function
 module.exports = generatorTemplate;
