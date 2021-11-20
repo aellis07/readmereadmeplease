@@ -43,7 +43,7 @@ const promptobj = [
         // == How do you use the application
 
         type: "input",
-        message: "How do you use the application associated with your project?",
+        message: "How do you use the application?",
         name: "usage",
     },
     {
@@ -65,15 +65,14 @@ const promptobj = [
         // == Contribution guidlines
 
         type: "input",
-        message:
-            "What are the guidelines for other developers to contribute to your project?",
+        message: "What are the contribution guidelines?",
         name: "contribution",
     },
     {
         // == How to run test associated with the project?
 
         type: "input",
-        message: "How do you run any tests associated with your project?",
+        message: "How do you run tests for this project?",
         name: "test",
     },
     {
@@ -94,6 +93,7 @@ const promptobj = [
 
 // FUNCTIONS
 // ================================
+// (3)
 inquirer.prompt(promptobj).then((answers) => {
     // (4)
     const strngobj = JSON.stringify(answers);
